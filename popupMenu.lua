@@ -30,20 +30,20 @@ local function main()
 			autoCloseOnInput= true
 		}
 	)
-	
-	
+		
 	-- prints input values
 	for k,v in pairs(resultTable.inputs) do
-		Printf("Input '%s' = '%s'", k,tostring(v))
+		--Printf("Input '%s' = '%s'", k,tostring(v))
 		inp = tostring(v)
 	end
 	
 	-- prints inputted values
-	for k,v in pairs(resultTable.states) do
-		Printf("State '%s' = '%s'", k,tostring(v))
-	end
+	--for k,v in pairs(resultTable.states) do
+		--Printf("State '%s' = '%s'", k,tostring(v))
+	--end
 	
 	
+	-- hilight and solo toggle
 	for k,v in pairs(resultTable.states) do
 		
 		-- trigger hilight
@@ -66,26 +66,40 @@ local function main()
 		end
 	end
 	
+	
+	-- parse out commas from list, separate by whitespace
 	final = inp:gsub("%s*,%s*", " ")
 	
 	
 	-- Now, get to getting universe info
 	
 	local fixturesInPatch = GetSubfixtureCount()
+	
 	for i=1, #final do
-		local myObjects = ObjectList("Fixture 1 thru ", fixturesInPatch)
-		local countFix = 0
-		for j=1, #myObjects do
-			local universe = tonumber(string.match(myObjects[j].patch, "^%d+"))
-			if universe == final:sub(i, i) then
-				countFix = countFix + 1
-				Printf("Address of Fixture " .. countFix.. " in universe " ..final[i] " = " .. myObjects[j].patch)
-				Cmd(myObjects[j].fid)
+		if (final:sub(i, i) ~= " ") then
+			currentUniverse = tonumber(final:sub(i, i))
+			Printf("")
+			Printf("--------------------------------------------")
+			Printf("----------------Universe " .. currentUniverse .. "------------------")
+			
+			myObjects = ObjectList("Fixture 1 thru ", fixturesInPatch)
+			countFix = 0
+			
+			for j=1,#myObjects do
+				uni = tonumber(string.match(myObjects[j].patch, "^%d+"))
+				if (uni == currentUniverse) then
+					countFix = countFix + 1
+					Printf("Address of Fixture " .. myObjects[j].fid .. " in universe " .. currentUniverse .. " = " .. myObjects[j].patch)
+					Cmd(myObjects[j].fid)
+				end
+			end
+			
+			-- empty universe check
+			if (countFix == 0) then
+				ErrPrintf("Universe " .. currentUniverse .. " appears to be empty. Double check your patch, and try again. ")
 			end
 		end
-	end
-			
-	
+	end	
 end
 
 return main

@@ -10,14 +10,7 @@ local function main()
 		Printf("Cancel")
 	end
 	
-	
-	-- if DMX == nil then
-		-- ErrPrintf("The requested universe has not been found, configured, or does not exist.")
-		-- return
-	-- end 
-	
-	local fixturesInPatch = GetSubfixtureCount()
-	
+	local fixturesInPatch = GetSubfixtureCount()	
     local myObjects = ObjectList("Fixture 1 thru ", fixturesInPatch)
 
     local countFix = 0
