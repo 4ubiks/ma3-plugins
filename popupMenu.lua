@@ -6,7 +6,7 @@ local function main()
 }
 	
 	local inputs = {
-	{name = "Universe: ", value="5...", whiteFilter="0123456789 "}
+	{name = "Universe: ", value="5...", whiteFilter="0123456789, "}
 }
 	local selectors={
 	{ name = "Swipe selector", selectedValue=2, values={["Triggers"]=2}, type=0}	
@@ -35,6 +35,7 @@ local function main()
 	-- prints input values
 	for k,v in pairs(resultTable.inputs) do
 		Printf("Input '%s' = '%s'", k,tostring(v))
+		inp = tostring(v)
 	end
 	
 	-- prints inputted values
@@ -61,6 +62,25 @@ local function main()
 				Cmd("Solo On Selection")
 			else
 				Cmd("Solo Off Selection")
+			end
+		end
+	end
+	
+	final = inp:gsub("%s*,%s*", " ")
+	
+	
+	-- Now, get to getting universe info
+	
+	local fixturesInPatch = GetSubfixtureCount()
+	for i=1, #final do
+		local myObjects = ObjectList("Fixture 1 thru ", fixturesInPatch)
+		local countFix = 0
+		for j=1, #myObjects do
+			local universe = tonumber(string.match(myObjects[j].patch, "^%d+"))
+			if universe == final:sub(i, i) then
+				countFix = countFix + 1
+				Printf("Address of Fixture " .. countFix.. " in universe " ..final[i] " = " .. myObjects[j].patch)
+				Cmd(myObjects[j].fid)
 			end
 		end
 	end
