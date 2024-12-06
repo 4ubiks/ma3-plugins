@@ -5,6 +5,9 @@ these are ma3 plugins built in Lua, using Lua and built-in grandMA3 functions
 ## universeSelect.lua:
 This gets one universe as the input from the user, selects every fixture within that universe, and prints each fixture's DMX address to the console. The input only allows for one integer as input, for now. 
 
+## saveAll.lua:
+Allows you to save your showfile to all currently connected drives. Will only list existing drives (ex. with no flash drives plugged in, your only option is `Internal`. With two flash drives, you'll see three options (internal, and your two drives). With three flash drives, you'll see four options (internal, and your three drives). You can select which areas to save to, and don't have to save to every drive if you want. 
+
 ## patchOrganize.lua (WIP): 
 Plugin will take all objects in the patch, if they are not grouped, create groups for each, and put them into respective groups, while keeping the addresses and universes intact. It's an organizational tool for LDs with a crowded patch
 
