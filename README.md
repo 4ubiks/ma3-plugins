@@ -10,3 +10,6 @@ Plugin will take all objects in the patch, if they are not grouped, create group
 
 ## popupMenu.lua:
 An extension of the `universeSelect.lua` plugin, basically a scaled-up version. Allows for multiple universe input, and you can enable/disable highlight and solo for your selection. Functionally, very similar to `universeSelect.lua`.  
+
+## references folder
+these plugins are not mine. i did not create them nor do i claim ownership or authorship of them. i use these to help me in building my own. 
