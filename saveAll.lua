@@ -1,7 +1,4 @@
 local function main()
-	--CmdIndirect("Select Drive 2")
-	--Cmd("SaveShow 'plugins'")
-	
 	local showName = (Root().MAnetSocket.Showfile)
 	
 	
@@ -9,10 +6,13 @@ local function main()
 	
 	local myObjects = ObjectList('Drive Thru')
 	for i = 1, #myObjects do
-		if (myObjects[i].drivetype == 'Internal' or myObjects[i].drivetype == 'Removeable') then
-			local cD = myObjects[i].co
-			Printf('Drive '..myObjects[i].no..' = '..myObjects[i].drivetype)
-			table.insert(states, {name=myObjects[i].name..' ('..myObjects[i].drivetype..')', state=true, group=i})
+		if (myObjects[i].drivetype == 'Internal') then
+			--Printf('Drive '..myObjects[i].no..' ('..myObjects[i].name..') = '..myObjects[i].drivetype)
+			table.insert(states, {name=myObjects[i].name, state=true, group=i, value=i})
+			
+		elseif (myObjects[i].drivetype == 'Removeable') then
+			table.insert(states, {name=myObjects[i].name, state=true, group=i})
+			--Printf('Drive '..myObjects[i].no..' ('..myObjects[i].name..') = '..myObjects[i].drivetype)
 		end
 	end
 	
@@ -50,19 +50,25 @@ local function main()
 		end
 	end
 	
-	--only save checked drives 
 	
-	local j = 1
+	
+	--only save checked drives 
 	for k,v in pairs(resultTable.states) do
 		if (tostring(v) == 'true') then
-			if (myObjects[j].drivetype == 'Internal' or myObjects[j].drivetype == 'Removeable') then
-				local cD = myObjects[j].no
-				Cmd("Select Drive " .. cD)
-				Cmd("SaveShow " .. showName)
+			if (k == 'Internal') then
+				Cmd('Select Drive 1')
+				Cmd('SaveShow '..showName)
+			else
+				--Printf(k)
+				Cmd('Select Drive '..k)
+				Cmd('SaveShow '..showName)
 			end
 		end
 	end
 	
+	-- Return to internal drive
+	Cmd('Select Drive 1')
+	
 end
 
-return main
+return main 
