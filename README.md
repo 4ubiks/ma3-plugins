@@ -19,7 +19,7 @@ The first rendition of a plugin that selects a universe and traces it, selecting
 ## $${\color{grey}smalls.lua:}$$
 Just small code snippets that do little, but important things. An example, I saved the line of code that returns the name of the current showfile. 
 
-## $${\color{grey}test_zone.lua:}$$
+## $${\color{grey}testZone.lua:}$$
 When building applications, you sometimes need to test small parts of it. That is to be done here. I do not save anything I want to remember long-term in here. 
 
 
