@@ -18,7 +18,7 @@ local function main()
 	
 	
 	local inputs = {
-	{name = "File Name: ", value=showName .. '.show'}
+	{name = "File Name: ", value=showName .. '.show', whiteFilter="|"}
 }
 	--local selectors={
 	--{ name = "Swipe selector", selectedValue=2, values={["Triggers"]=2}, type=0}	
