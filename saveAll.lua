@@ -18,7 +18,7 @@ local function main()
 	
 	
 	local inputs = {
-	{name = "File Name: ", value="myshow.show"}
+	{name = "File Name: ", value=showName .. '.show'}
 }
 	--local selectors={
 	--{ name = "Swipe selector", selectedValue=2, values={["Triggers"]=2}, type=0}	
@@ -29,10 +29,10 @@ local function main()
 		MessageBox(
 		{
 			title= "Save To Drives",
-			message="Save your show to whatever drives you would like, all at once!",
+			message="Save your show to whatever drives you would like, all at once! Renaming showfiles not yet available.",
 			message_align_h = Enums.AlignmentH.Left,
 			message_align_v = Enums.AlignmentV.Top,
-			commands = {{value = 1, name="Save to Selected Drives"}, {value=0, name="Quit Without Saving"}},
+			commands = {{value = 1, name="Save to Selected Drives"}, {value=0, name="Close Without Saving"}},
 			states=states,
 			inputs=inputs,
 			--selectors=selectors,
@@ -51,7 +51,6 @@ local function main()
 	end
 	
 	
-	
 	--only save checked drives 
 	for k,v in pairs(resultTable.states) do
 		if (tostring(v) == 'true') then
@@ -61,7 +60,7 @@ local function main()
 			else
 				--Printf(k)
 				Cmd('Select Drive '..k)
-				Cmd('SaveShow '..showName)
+				Cmd('SaveShow ' .. showName)
 			end
 		end
 	end
