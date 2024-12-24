@@ -1,5 +1,4 @@
 local function main()
-
 	-- clears the programmer
 	Cmd("ClearAll")
 	
