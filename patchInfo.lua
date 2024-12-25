@@ -1,8 +1,11 @@
 local function print(table, x)
+	
+	filewrite = io.open("report.txt", "w")
+	
 	local myTypes = ObjectList("FixtureType 1 Thru")
 	local k = 1
 	
-	Printf(myTypes[2].manufacturer)
+	--Printf(myTypes[2].manufacturer)
 	
 	for j=1, #myTypes do
 		if myTypes[j].name == x[k] then
@@ -21,19 +24,26 @@ local function print(table, x)
 			end
 		end
 		
-		Printf("========" .. x[i].fixture .. "========")
-		Printf("Fixture ID: " .. x[i].fixture)
-		Printf("Fixture Manufacturer: " .. manu)
-		Printf("Fixture Type: " .. x[i].fixturetype.name)
-		Printf("Fixture mode: " .. x[i].mode)
-		Printf("Fixture address: " .. x[i].patch)
-		Printf(" ")
+		local mode = tostring(x[i].mode)
+		mode = mode:gsub("%d+", "")
+		
+		filewrite:write("========================================\n")
+		filewrite:write("-" .. x[i].fixture ..":\n")
+		filewrite:write(manu .. " " .. x[i].fixturetype.name .. ", " .. mode .. " mode\n")
+		filewrite:write(" \n")
+		filewrite:write("Fixture ID: " .. x[i].fixture .. "\n")
+		filewrite:write("Fixture address: " .. x[i].patch .. "\n")
+		filewrite:write("\n")
 	end
+	
+	filewrite:close()
 end
 
 local function main()
 	local myObjects = ObjectList("Fixture 1 Thru")
 	print(table, myObjects)
+	
+	
 end
 
 
