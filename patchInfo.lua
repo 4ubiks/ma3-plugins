@@ -1,16 +1,18 @@
 local function print(table, x)
-	Printf("Fixture ID: " .. x[1].fixture)
-	Printf("Fixture Manufacturer: " .. x[1].name)
-	Printf("Fixture Type: " .. x[1].name)
-	Printf("Fixture mode: " .. x[1].mode)
-	Printf("Fixture address: " .. x[1].patch)
+	for i=1, #x do
+		Printf("========" .. x[i].fixture .. "========")
+		Printf("Fixture ID: " .. x[i].fixture)
+		Printf("Fixture Manufacturer: " .. x[i].name)
+		Printf("Fixture Type: " .. x[i].fixturetype.name)
+		Printf("Fixture mode: " .. x[i].mode)
+		Printf("Fixture address: " .. x[i].patch)
+		Printf(" ")
+	end
 end
 
 local function main()
-	local myObjects = ObjectList("Fixture 101 Thru 105")
-	Printf(myObjects[1].patch)
+	local myObjects = ObjectList("Fixture 1 Thru")
 	print(table, myObjects)
-	--Printf(myObjects[1]:Dump())
 end
 
 return main
