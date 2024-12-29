@@ -1,7 +1,7 @@
 # ma3-plugins
 these are ma3 plugins built in Lua, using Lua and built-in grandMA3 functions
 
-<br>
+
 ## All completed plugins are stored in the `finalProducts` directory
 
 ## $${\color{grey}universeTrace.lua:}$$
