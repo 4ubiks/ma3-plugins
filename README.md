@@ -1,6 +1,8 @@
 # ma3-plugins
 these are ma3 plugins built in Lua, using Lua and built-in grandMA3 functions
 
+<br>
+## All _completed_ plugins are in the `finalProducts` directory
 
 ## $${\color{grey}universeTrace.lua:}$$
 The sequel and newly-revised version of `singleUniverse.lua`. This plugin allows you to list every universe you'd like to select, separated by commas. The plugin formats each universe to be selected individually. So, if you want to trace universes 2, 3, and 5, you type `2, 3, 5` into the plugin menu. It will select universes 2, 3, and 5. It returns their addresses with the universe in the standard format. You can also determine whether or not you'd like to enable HiLite or Solo mode when selecting your universes. 
