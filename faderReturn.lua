@@ -1,0 +1,3 @@
+-- first draft: return what fader plugin is currently stored on
+-- second draft: return active value of fader (0, 50, 75, etc)
+-- final draft: change general universal value of RGB, CMY, or any other universal attribute for most fixtures
