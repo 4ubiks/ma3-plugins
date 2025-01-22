@@ -5,12 +5,13 @@ function find()											-- This file will handle user input and determine what
 		userLetter = tostring(v)
 	end
 	
-	Printf(userLetter)
-	
+	--Printf(userLetter)
+
+	-- creating array to use as global, this is what gets used in main
 	lightLetter = {}
-	
-	local choice = _G[userLetter]
-	
+	local choice = _G[userLetter] -- global table reference '_G'
+
+	-- maps whatever letter chosen from 'alphabet.lua' to lightLetter
 	if choice and type(choice) == "table" then
 		for k,v in ipairs(choice) do
 			Printf(v)
