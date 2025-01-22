@@ -5,6 +5,7 @@
 -- This file holds main
 
 local function main()
+	message()   -- calls the popup message for user
 
 	alphabet() 	-- calls 'alphabet.lua', storing each letter's values
 	call()		-- calls 'call.lua', gets user input and desired letter
