@@ -1,7 +1,7 @@
 # ma3-plugins
 these are ma3 plugins built in Lua, using Lua and built-in grandMA3 functions
 
-## $${\color{yellow}Please notify me of any bugs / errors! :)}$$
+## *Please, notify me with any bugs/errors in the `issues` tab!*
 
 ## All completed plugins are stored in the $${\color{purple}finalProducts}$$ directory
 *note - DO NOT expect any plugins outside of that directory to work, at all.*
