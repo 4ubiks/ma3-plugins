@@ -1,19 +1,12 @@
 -- popup menu for the plugin
 
-function call()
-
-	--local states = {
-	--{name = "Internal Drive", state=true, group=1},
-	--{name = "Drive 2", state=true, group=2},
-	--{name = "Drive 3", state=true, group=3}
---}
-	
+function call()	
+	-- each field for user input
 	inputs = {
-	
-	{name = "Starting Fixture ID", value="101", whiteFilter="0123456789"},
-	{name = "Letter Sequence ", value="helloworld", whiteFilter="ABCDEFGHIJKLMNOPQRSTUVWXYZ,"}
-}
-
+		{name = "Starting Fixture ID", value="101", whiteFilter="0123456789"},
+		{name = "Letter Sequence ", value="helloworld", whiteFilter="ABCDEFGHIJKLMNOPQRSTUVWXYZ,"}
+	}
+	-- popup structure, stored as a class object 'lettersTable'
 	lettersTable=
 		MessageBox(
 		{
@@ -22,7 +15,6 @@ function call()
 			message_align_h = Enums.AlignmentH.Left,
 			message_align_v = Enums.AlignmentV.Top,
 			commands = {{value = 1, name="Enter Values"}, {value=0, name="Cancel"}},
-			states=states,
 			inputs=inputs,
 			--selectors=selectors,
 			backColor= "Global.Default",
@@ -31,8 +23,6 @@ function call()
 			autoCloseOnInput= true
 		}
 	)
-	
-	
 end
 
 return call
