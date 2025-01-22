@@ -4,7 +4,7 @@ function call()
 	-- each field for user input
 	inputs = {
 		{name = "Starting Fixture ID", value="101", whiteFilter="0123456789"},
-		{name = "Letter Sequence ", value="helloworld", whiteFilter="ABCDEFGHIJKLMNOPQRSTUVWXYZ,"}
+		{name = "Letter Sequence ", value="helloworld", whiteFilter="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"}
 	}
 	-- popup structure, stored as a class object 'lettersTable'
 	lettersTable=
