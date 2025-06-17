@@ -1,5 +1,5 @@
 # ma3-plugins
-these are ma3 plugins built in Lua, using Lua and built-in grandMA3 functions
+These are ma3 plugins built in Lua, using Lua syntax and built-in grandMA3 functions to help optimize console efficiency
 
 ## *Please, notify me with any bugs/errors in the `issues` tab!*
 
@@ -29,10 +29,6 @@ Generates a report of every fixture in your patch, including each fixture's manu
 Plugin will take all objects in the patch, if they are not grouped, create groups for each, and put them into respective groups, while keeping the addresses and universes intact. It's an organizational tool for LDs with a crowded patch
 <br>
 <br>
-## $${\color{grey}singleUniverse.lua:}$$
-The first rendition of a plugin that selects a universe and traces it, selecting every fixture in the provided universe, and returns their fixture address. This only works for one universe, and input must be formatted a specific way. It's trivial, and not super effective if you want to trace multiple universes, but hey, it was my first plugin I ever wrote. 
-<br>
-<br>
 ## $${\color{grey}smalls.lua:}$$
 Just small code snippets that do little, but important things. An example, I saved the line of code that returns the name of the current showfile. 
 <br>
@@ -42,4 +38,10 @@ When building applications, you sometimes need to test small parts of it. That i
 <br>
 <br>
 ## $${\color{grey}references folder:}$$
-these plugins are not mine. i did not create them nor do i claim ownership or authorship of them. i use these to help me in building my own. 
+All plugins and code used from external resources. I do not claim to have authored any files inside of this folder, but you'll very likely find some helpful tricks and tools in here. 
+
+# Legacy Plugins
+## $${\color{grey}singleUniverse.lua:}$$
+Selects a single universe, and traces each fixture that exists inside it. Returns fixture ID and patch information. WOrks for a single universe at a time, ideal for quick traces and small troubleshooting. Precursor to `universeTrace.lua`.
+<br>
+<br>
