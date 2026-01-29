@@ -9,7 +9,7 @@ The sequel and newly-revised version of `singleUniverse.lua`. This plugin allows
 <br>
 <br>
 
-## $$ letters/
+## letters/
 This is a directory housing a plugin that takes a user's input string and displays the text on multi-instance fixtures with a 6x6 color grid. 
 
 ## saveAll.lua:
