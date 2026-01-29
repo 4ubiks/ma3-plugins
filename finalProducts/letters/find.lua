@@ -9,7 +9,7 @@ function find()											-- This file will handle user input and determine what
 	end
 	
 	fixt = ins[1]
-	userLetter = ins[2]
+	userLetter = ins[4]
     userLetter = string.upper(userLetter)
 	
 end

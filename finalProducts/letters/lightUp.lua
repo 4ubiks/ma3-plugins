@@ -10,6 +10,8 @@ function light(letter, fixture)
 	local choice = _G[letter] -- global table reference '_G'
 
 	-- maps whatever letter chosen from 'alphabet.lua' to lightLetter
+	-- k: subfixture grid
+	-- v: letter array '1' or '0'
 	if choice and type(choice) == "table" then
 		for k,v in ipairs(choice) do
 			table.insert(lightLetter, v)
@@ -35,8 +37,7 @@ function light(letter, fixture)
 			setVal = 0
 			values[i] = setVal
 		end
-	end
-
+	end	
 
 	-- multi-instance fixture at full
 	Cmd(atFull)
@@ -45,6 +46,13 @@ function light(letter, fixture)
 		local val = "Fixture " .. FID .. "." .. j .. " at " .. values[j]
 		Cmd(val)
 	end
+	
+	Cmd("Fixture " .. FID)
+	-- set color for light
+	Cmd("Attribute ColorRGB_R at " .. ins[2])
+	Cmd("Attribute ColorRGB_G at " .. ins[5])
+	Cmd("Attribute ColorRGB_B at " .. ins[3])
+	Cmd("Clear")
 end
 
 return light
