@@ -8,8 +8,14 @@ function find()											-- This file will handle user input and determine what
 		table.insert(ins, userLetter)
 	end
 	
-	fixt = ins[1]
-	userLetter = ins[4]
+	-- why does the increment of array change? as of last test, ins[4] is fixture ID and ins[3] is string
+	fixt = ins[4]
+	userLetter = ins[3]
+	
+	Printf("From `find.lua`...")
+	Printf("Fixture ID: " .. ins[4])
+	Printf("User string: "  .. ins[3])
+	
     userLetter = string.upper(userLetter)
 	
 end
