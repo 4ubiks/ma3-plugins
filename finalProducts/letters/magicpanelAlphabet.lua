@@ -1,6 +1,7 @@
 -- here is how i'm interpreting each letter
+-- for Ayrton MagicPanel 6x6 grid fixtures
 
-function alphabet()
+function magicpanelAlphabet()
 	A = {"1","1","1","1","1","1",
 	     "1","0","0","0","0","1",
 	     "1","0","0","0","0","1",
@@ -184,4 +185,4 @@ function alphabet()
 	     "1","1","1","1","1","1"}
 end
 
-return alphabet
+return magicpanelAlphabet

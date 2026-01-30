@@ -6,8 +6,14 @@
 
 local function main()
 	message()   -- calls the popup message for user
-
-	alphabet() 	-- calls 'alphabet.lua', storing each letter's values
+	
+	-- calls the respective alphabet function for the selected fixture
+	if (selectedFixture == 1) then
+		mkAlphabet() 	
+	else
+		magicpanelAlphabet()
+	end
+	
 	call()		-- calls 'call.lua', gets user input and desired letter
 	find()		-- calls 'find.lua', handles user input and returns letter array
 
