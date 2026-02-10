@@ -26,6 +26,23 @@ none
 
 ## Version History
 
+## v1.2.2.0
+Rewrote `find.lua` to support `ipairs` iterations and ensure a consistent ordering of table attributes
+```lua
+-- Old:
+ins[1] = attribute1
+ins[2] = attribute2
+ins[3] = attribute3
+-- problem, ordering could vary
+
+-- New:
+fixtureTable["RGB_R"] = RedAttribute
+fixtureTable["RGB_G"] = GreenAttribute
+fixtureTable["RGB_B"] = BlueAttribute
+-- ensures order is always the same for `lightUp.lua`
+
+```
+
 ## v1.2.1.0
 Added print debug statements for the `ins[]` array
 

@@ -31,11 +31,6 @@ function light(letter, fixture)
 					0, 0, 0, 0, 0, 0, 0, 0, 0,
 					0, 0, 0}
 					
-	-- need to implement selection-dependent logic
-	if (selectedFixture == 1) then
-		Printf("YOU SELECTED THE MK3!!!!")
-	end
-		  
 	-- setting each value in 'values' matrix
 	local setVal = 0
 	for i=1, #lightLetter do
@@ -58,9 +53,9 @@ function light(letter, fixture)
 	
 	Cmd("Fixture " .. FID)
 	-- set color for light
-	Cmd("Attribute ColorRGB_R at " .. ins[2])
-	Cmd("Attribute ColorRGB_G at " .. ins[5])
-	Cmd("Attribute ColorRGB_B at " .. ins[3])
+	Cmd("Attribute ColorRGB_R at " .. fixtureInfoTable["FixtureRGB_R"])
+	Cmd("Attribute ColorRGB_G at " .. fixtureInfoTable["FixtureRGB_G"])
+	Cmd("Attribute ColorRGB_B at " .. fixtureInfoTable["FixtureRGB_B"])
 	Cmd("Clear")
 end
 
