@@ -33,7 +33,7 @@ Rewrote `find.lua` to support `ipairs` iterations and ensure a consistent orderi
 ins[1] = attribute1
 ins[2] = attribute2
 ins[3] = attribute3
--- problem, ordering could vary
+-- problem, ordering could vary. `pairs` isn't order-specific, so ins[1] could end up attribute2. google 'lua pairs vs ipairs'
 
 -- New:
 fixtureTable["RGB_R"] = RedAttribute
