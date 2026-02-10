@@ -27,7 +27,7 @@ none
 ## Next bug:
 Switching between fixture types produces garbage on fixtures. After one run of plugin and seeing trash output, it'll work. But it takes one round of looking weird until it works.
 
-## Version History
+# Version History
 
 ## v1.2.2.0
 Rewrote `find.lua` to support `ipairs` iterations and ensure a consistent ordering of table attributes
