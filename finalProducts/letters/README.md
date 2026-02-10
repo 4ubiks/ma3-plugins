@@ -24,6 +24,9 @@ none
 `lightLetter`: value array built from input, fed into main
 `choice`: matches input to the arrays in `alphabet.lua`
 
+## Next bug:
+Switching between fixture types produces garbage on fixtures. After one run of plugin and seeing trash output, it'll work. But it takes one round of looking weird until it works.
+
 ## Version History
 
 ## v1.2.2.0
