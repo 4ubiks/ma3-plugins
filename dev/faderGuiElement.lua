@@ -22,8 +22,8 @@ function main(displayHandle)
     screenOverlay:ClearUIChildren()  
 
     -- dialog base
-    local dialogHeight = 1400
-    local dialogWidth = 1600
+    local dialogHeight = 700
+    local dialogWidth = 800
     local baseInput = screenOverlay:Append("BaseInput")
     baseInput.Name = "Lettering"
     baseInput.H = dialogHeight
@@ -48,7 +48,7 @@ function main(displayHandle)
     titleBar.Texture = "corner2"
     
     local titleBarIcon = titleBar:Append("TitleButton")
-    titleBarIcon.Text = "Dialog Example"
+    titleBarIcon.Text = "Letters"
     titleBarIcon.Texture = "corner1"
     titleBarIcon.Anchors = "0,0"
     titleBarIcon.Icon = "Logo"
@@ -61,8 +61,8 @@ function main(displayHandle)
     local dlgFrame = baseInput:Append("DialogFrame")
     dlgFrame.H = "100%"
     dlgFrame.W = "100%"
-    dlgFrame.Columns = 1  
-    dlgFrame.Rows = 3
+    dlgFrame.Columns = 2
+    dlgFrame.Rows = 5
     dlgFrame.Anchors = {
         left = 0,
         right = 0,
@@ -99,7 +99,6 @@ function main(displayHandle)
 
     -- faders
     local faderGrid = dlgFrame:Append("UILayoutGrid")
-
     faderGrid.Columns = 2
     faderGrid.Rows = 1
     faderGrid.Anchors = {
@@ -147,22 +146,66 @@ function main(displayHandle)
         bottom = 0
     }
 
-    local chauvetButton = buttonGrid:Append("LineEdit")
-    chauvetButton.Anchors = {
+    -- input grid
+    -- 3rd row of dialog
+    local inputsGrid = dlgFrame:Append("UILayoutGrid")
+    inputsGrid.Columns=3
+    buttonGrid.Rows = 1
+    buttonGrid.Anchors = {
+        left=0,
+        right=3,
+        top=2,
+        bottom=2
+    }
+
+    -- INPUTS
+    local fixtureRGB_R_input = inputsGrid:Append("LineEdit")
+    fixtureRGB_R_input.Anchors = {
         left = 0,
         right = 0,
         top = 0,
         bottom = 0
     }
-    chauvetButton.Textshadow = 1;
-    chauvetButton.HasHover = "Yes";
-    chauvetButton.Text = "Chauvet MK3 Wash";
-    chauvetButton.TextAutoAdjust = "Yes"
-    chauvetButton.Font = "Medium20";
-    chauvetButton.TextalignmentH = "Centre";
-    chauvetButton.PluginComponent = myHandle
-    chauvetButton.Clicked = "ChauvetButtonClicked"
-    chauvetButton.Visible = "Yes"
+    fixtureRGB_R_input.Textshadow = 1;
+    fixtureRGB_R_input.HasHover = "Yes";
+    fixtureRGB_R_input.Text = "FixtureRGB_R";
+    fixtureRGB_R_input.Font = "Medium20";
+    fixtureRGB_R_input.TextalignmentH = "Centre";
+    fixtureRGB_R_input.PluginComponent = myHandle
+    fixtureRGB_R_input.Clicked = "FixtureRGB_RClicked"
+    fixtureRGB_R_input.Visible = "Yes"
+
+    -- green color input
+    local fixtureRGB_G_input = inputsGrid:Append("LineEdit")
+    fixtureRGB_G_input.Anchors = {
+        left = 0,
+        right = 0,
+        top = 0,
+        bottom = 0
+    }
+    fixtureRGB_G_input.Textshadow = 1;
+    fixtureRGB_G_input.HasHover = "Yes";
+    fixtureRGB_G_input.Text = "FixtureRGB_R";
+    fixtureRGB_G_input.Font = "Medium20";
+    fixtureRGB_G_input.TextalignmentH = "Centre";
+    fixtureRGB_G_input.PluginComponent = myHandle
+    fixtureRGB_G_input.Clicked = "FixtureRGB_GClicked"
+
+    -- blue color input
+    local fixtureRGB_B_input = inputsGrid:Append("LineEdit")
+    fixtureRGB_B_input.Anchors = {
+        left = 0,
+        right = 0,
+        top = 0,
+        bottom = 0
+    }
+    fixtureRGB_B_input.Textshadow = 1;
+    fixtureRGB_B_input.HasHover = "Yes";
+    fixtureRGB_B_input.Text = "FixtureRGB_R";
+    fixtureRGB_B_input.Font = "Medium20";
+    fixtureRGB_B_input.TextalignmentH = "Centre";
+    fixtureRGB_B_input.PluginComponent = myHandle
+    fixtureRGB_B_input.Clicked = "FixtureRGB_BClicked"
 
     local resizer = baseInput:Append("ResizeCorner")
     resizer.Anchors = "0,1" 
