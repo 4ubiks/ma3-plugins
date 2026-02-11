@@ -24,7 +24,7 @@ function CreateFaderDialog(displayHandle)
   screenOverlay:ClearUIChildren()   
   
   -- Create the dialog base.
-  local dialogWidth = 650
+  local dialogWidth = 1300
   local baseInput = screenOverlay:Append("BaseInput")
   baseInput.Name = "DMXTesterWindow"
   baseInput.H = "0"
