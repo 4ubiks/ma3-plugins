@@ -1,6 +1,6 @@
 local function print(table, x)
 	
-	filewrite = io.open("report.txt", "w")
+	filewrite = io.open("/Users/jaharris20/Desktop/report.txt", "w")
 	
 	local myTypes = ObjectList("FixtureType 1 Thru")
 	local k = 1
