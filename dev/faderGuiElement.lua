@@ -2,9 +2,12 @@
 -- This is for the `letters/` plugin, but it's not a finished product. 
 -- Creating it here, s.t. I don't disrupt the working product. However, this belongs to the letters/ plugin. 
 
+local pluginName = select(1, ...)
+local componentName = select(2, ...)
+local signalTable = select(3, ...)
 local myHandle = select(4, ...)
 
-local function main()
+function main(displayHandle)
 
     local displayIndex = Obj.Index(GetFocusDisplay())
     if displayIndex > 5 then
@@ -48,7 +51,7 @@ local function main()
     titleBarIcon.Text = "Dialog Example"
     titleBarIcon.Texture = "corner1"
     titleBarIcon.Anchors = "0,0"
-    titleBarIcon.Icon = "star"
+    titleBarIcon.Icon = "Logo"
     
     local titleBarCloseButton = titleBar:Append("CloseButton")
     titleBarCloseButton.Anchors = "1,0"
@@ -138,26 +141,42 @@ local function main()
     buttonGrid.Columns=2
     buttonGrid.Rows = 1
     buttonGrid.Anchors = {
-        left = 3,
+        left = 0,
         right = 0,
-        top = 2,
-        bottom = 2
+        top = 0,
+        bottom = 0
     }
 
-    local chauvetButton = buttonGrid:Append("Checkbox")
+    local chauvetButton = buttonGrid:Append("LineEdit")
     chauvetButton.Anchors = {
         left = 0,
         right = 0,
         top = 0,
-        bottom = 2
+        bottom = 0
     }
-
     chauvetButton.Textshadow = 1;
-    chauvetButton.Text = "Chauvet"
+    chauvetButton.HasHover = "Yes";
+    chauvetButton.Text = "Chauvet MK3 Wash";
+    chauvetButton.TextAutoAdjust = "Yes"
+    chauvetButton.Font = "Medium20";
+    chauvetButton.TextalignmentH = "Centre";
+    chauvetButton.PluginComponent = myHandle
+    chauvetButton.Clicked = "ChauvetButtonClicked"
+    chauvetButton.Visible = "Yes"
 
     local resizer = baseInput:Append("ResizeCorner")
     resizer.Anchors = "0,1" 
     resizer.AlignmentH = "Right"
     resizer.AlignmentV = "Bottom"  
+
+    signalTable.ChauvetButtonClicked = function(caller)
+        Echo(caller.Text .. " selected.")
+        Obj.Delete(screenOverlay, Obj.index(baseInput))
+    end
+
+    signalTable.OnOutputLevelChanged = function(caller)
+        Echo(caller.Text .. " changed: " .. caller.Value)
+    end
+
 end
 return main
