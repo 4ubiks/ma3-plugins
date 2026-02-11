@@ -6,7 +6,6 @@ local function main()
 	local myObjects = ObjectList('Drive Thru')
 	for i = 1, #myObjects do
 		if (myObjects[i].drivetype == 'Internal') then
-			--Printf('Drive '..myObjects[i].no..' ('..myObjects[i].name..') = '..myObjects[i].drivetype)
 			table.insert(states, {name=myObjects[i].name, state=true, group=i, value=i})
 			
 		elseif (myObjects[i].drivetype == 'Removeable') then
@@ -15,13 +14,9 @@ local function main()
 		end
 	end
 	
-	
 	local inputs = {
 	{name = "File Name: ", value=showName .. ".show"}
 }
-	--local selectors={
-	--{ name = "Swipe selector", selectedValue=2, values={["Triggers"]=2}, type=0}	
---}
 	
 	-- message box
 	local resultTable=
@@ -48,8 +43,6 @@ local function main()
 			return
 		end
 	end
-	
-	
 	
 	--only save checked drives 
 	for k,v in pairs(resultTable.states) do
