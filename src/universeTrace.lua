@@ -3,7 +3,7 @@ local function main()
 	Cmd("ClearAll")
 	
 	local states = {
-	{name = "HiLight", state=true, group=1},
+	{name = "HighLight", state=true, group=1},
 	{name = "Solo", state=true, group=2}
 }
 	
