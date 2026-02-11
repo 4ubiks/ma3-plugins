@@ -5,8 +5,6 @@ local function print(table, x)
 	local myTypes = ObjectList("FixtureType 1 Thru")
 	local k = 1
 	
-	--Printf(myTypes[2].manufacturer)
-	
 	for j=1, #myTypes do
 		if myTypes[j].name == x[k] then
 			local manu = tostring(myTypes[j].manufacturer)
