@@ -33,13 +33,11 @@ local function main()
 		}
 	)
 	
-	
 	if resultTable.success then
 		if resultTable.result == 0 then
 			return
 		end
 	end
-	
 	
 	-- prints input values
 	for k,v in pairs(resultTable.inputs) do
@@ -59,7 +57,6 @@ local function main()
 			end
 		end
 		
-		
 		-- trigger solo		
 		if (k == 'Solo') then
 			if (tostring(v) == 'true') then
@@ -70,7 +67,6 @@ local function main()
 		end
 	end
 	
-	
 	-- parse out commas from list, separate by whitespace
 	fin = inp:gsub("%s*,%s*", " ")
 	local final = {}
@@ -79,10 +75,7 @@ local function main()
 		table.insert(final, tonumber(num))
 	end
 	
-	
-	
 	-- Now, get to getting universe info
-	
 	local fixturesInPatch = GetSubfixtureCount()
 	
 	for i=1, #final do
