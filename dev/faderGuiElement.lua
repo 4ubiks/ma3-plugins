@@ -170,6 +170,8 @@ function main(displayHandle)
     local fixtureRGB_R_label = inputsGrid:Append("UIObject")
     fixtureRGB_R_label.Text = "FixtureRGB_R"
     fixtureRGB_R_label.TextalignmentH = "Left"
+    -- top/bottom: from TOP column to BOTTOM column...
+    -- left/right: from LEFT row to RIGHT row...
     fixtureRGB_R_label.Anchors = {
         left = 1,
         right = 5,
