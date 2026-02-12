@@ -149,22 +149,24 @@ function main(displayHandle)
     -- input grid
     -- 3rd row of dialog
     local inputsGrid = dlgFrame:Append("UILayoutGrid")
-    inputsGrid.Columns=12
-    inputsGrid.Rows = 3
+    inputsGrid.Columns=20
+    inputsGrid.Rows = 5
     inputsGrid.Anchors = {
         left=0,
         right=0,
-        top=1,
-        bottom=1
+        top=3,
+        bottom=3
     }
     inputsGrid.Margin = {
         left = 0,
         right = 0,
-        top = 0,
+        top = 5,
         bottom = 5
     }
 
     -- INPUTS
+    -- ==================
+    -- FixtureRGB_R LABEL
     local fixtureRGB_R_label = inputsGrid:Append("UIObject")
     fixtureRGB_R_label.Text = "FixtureRGB_R"
     fixtureRGB_R_label.TextalignmentH = "Left"
@@ -182,7 +184,8 @@ function main(displayHandle)
         bottom = 2
     }
 
-    -- now, add the actual input box
+    -- ==================
+    -- FixtureRGB_R INPUT
     local fixtureRGB_R_input = inputsGrid:Append("LineEdit")
     fixtureRGB_R_input.Margin = {
         left = 2,
@@ -206,7 +209,9 @@ function main(displayHandle)
     fixtureRGB_R_input.Clicked = "FixtureRGB_RClicked"
     fixtureRGB_R_input.Visible = "Yes"
 
-    -- green color input
+
+    -- ==================
+    -- FixtureRGB_G LABEL
     local fixtureRGB_G_label = inputsGrid:Append("UIObject")
     fixtureRGB_G_label.Text = "FixtureRGB_G"
     fixtureRGB_G_label.TextalignmentH = "Left"
@@ -224,7 +229,8 @@ function main(displayHandle)
         bottom = 2
     }
 
-    -- now, add the actual input box
+    -- ==================
+    -- FixtureRGB_G INPUT
     local fixtureRGB_G_input = inputsGrid:Append("LineEdit")
     fixtureRGB_G_input.Margin = {
         left = 2,
@@ -248,7 +254,9 @@ function main(displayHandle)
     fixtureRGB_G_input.Clicked = "FixtureRGB_RClicked"
     fixtureRGB_G_input.Visible = "Yes"
 
-    -- blue color input
+
+    -- ==================
+    -- FixtureRGB_B LABEL
     local fixtureRGB_B_label = inputsGrid:Append("UIObject")
     fixtureRGB_B_label.Text = "FixtureRGB_B"
     fixtureRGB_B_label.TextalignmentH = "Left"
@@ -266,7 +274,8 @@ function main(displayHandle)
         bottom = 2
     }
 
-    -- now, add the actual input box
+    -- ==================
+    -- FixtureRGB_B INPUT
     local fixtureRGB_B_input = inputsGrid:Append("LineEdit")
     fixtureRGB_B_input.Margin = {
         left = 2,
@@ -289,6 +298,96 @@ function main(displayHandle)
     fixtureRGB_B_input.PluginComponent = myHandle
     fixtureRGB_B_input.Clicked = "FixtureRGB_BClicked"
     fixtureRGB_B_input.Visible = "Yes"
+
+
+    -- ==================
+    -- Starting FID LABEL
+    local startingFixtureID_label = inputsGrid:Append("UIObject")
+    startingFixtureID_label.Text = "FixtureStartingID"
+    startingFixtureID_label.TextalignmentH = "Left"
+    startingFixtureID_label.Anchors = {
+        left = 1,
+        right = 5,
+        top = 3,
+        bottom = 3
+    }
+    startingFixtureID_label.Padding = "5.5"
+    startingFixtureID_label.Margin = {
+        left = 2,
+        right = 2,
+        top = 2,
+        bottom = 2
+    }
+
+    -- ==================
+    -- Starting FID INPUT
+    local startingFixtureID_input = inputsGrid:Append("LineEdit")
+    startingFixtureID_input.Margin = {
+        left = 2,
+        right = 0,
+        top = 2,
+        bottom = 2
+    }
+    startingFixtureID_input.Anchors = {
+        left = 6,
+        right = 9,
+        top = 3,
+        bottom = 3
+    }
+    startingFixtureID_input.Padding = "5,5"
+    startingFixtureID_input.Textshadow = 1;
+    startingFixtureID_input.HasHover = "Yes";
+    startingFixtureID_input.Text = "FixtureStartingID";
+    startingFixtureID_input.Font = "Medium20";
+    startingFixtureID_input.TextalignmentH = "Centre";
+    startingFixtureID_input.PluginComponent = myHandle
+    startingFixtureID_input.Clicked = "StartFixIDClickedIdk"
+    startingFixtureID_input.Visible = "Yes"
+
+
+    -- ==================
+    -- String LABEL
+    local fixtureString_label = inputsGrid:Append("UIObject")
+    fixtureString_label.Text = "StringToDisplay"
+    fixtureString_label.TextalignmentH = "Left"
+    fixtureString_label.Anchors = {
+        left = 1,
+        right = 5,
+        top = 4,
+        bottom = 4
+    }
+    fixtureString_label.Padding = "5.5"
+    fixtureString_label.Margin = {
+        left = 2,
+        right = 2,
+        top = 2,
+        bottom = 2
+    }
+
+    -- ==================
+    -- String INPUT
+    local fixtureString_input = inputsGrid:Append("LineEdit")
+    fixtureString_input.Margin = {
+        left = 2,
+        right = 0,
+        top = 2,
+        bottom = 2
+    }
+    fixtureString_input.Anchors = {
+        left = 6,
+        right = 9,
+        top = 4,
+        bottom = 4
+    }
+    fixtureString_input.Padding = "5,5"
+    fixtureString_input.Textshadow = 1;
+    fixtureString_input.HasHover = "Yes";
+    fixtureString_input.Text = "StringToDisplay";
+    fixtureString_input.Font = "Medium20";
+    fixtureString_input.TextalignmentH = "Centre";
+    fixtureString_input.PluginComponent = myHandle
+    fixtureString_input.Clicked = "StringClickedIdk"
+    fixtureString_input.Visible = "Yes"
 
     local resizer = baseInput:Append("ResizeCorner")
     resizer.Anchors = "0,1" 
