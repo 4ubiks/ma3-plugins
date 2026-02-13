@@ -7,7 +7,7 @@ The sequel and newly-revised version of `singleUniverse.lua`. This plugin allows
 <br>
 <br>
 
-## letters/ (v1.2.1.0)
+## letters/ (v1.2.2.0)
 This is a directory housing a plugin that takes a user's input string and displays the text on multi-instance fixtures with a 6x6 color grid. 
 Currently supports `Ayrton MagicPanel 6x6` fixtures and `Chauvet MK3 Wash` fixtures. 
 
