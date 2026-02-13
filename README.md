@@ -21,6 +21,11 @@ Generates a report of every fixture in your patch, including each fixture's manu
 <br>
 <br>
 
+## exportPlugins.lua (v1.0.0.0)
+A plugin I wrote catered towards my environment, but it just exports all my plugins to an external drive at once. It got tedious trying to ensure my flash drives always had the latest version, it's a quick fix. Not a complex plugin. If you use, make sure you have an external drive plugged in. Otherwise they just save to your internal disk. 
+<br>
+<br>
+
 # Legacy Plugins
 ## singleUniverse.lua:
 Selects a single universe, and traces each fixture that exists inside it. Returns fixture ID and patch information. WOrks for a single universe at a time, ideal for quick traces and small troubleshooting. Precursor to `universeTrace.lua`.
