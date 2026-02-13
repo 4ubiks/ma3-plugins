@@ -204,6 +204,7 @@ function main(displayHandle)
         bottom = 0
     }
     fixtureRGB_R_input.Padding = "5,5"
+    fixtureRGB_R_input.Filter = "0123456789"
     fixtureRGB_R_input.Textshadow = 1;
     fixtureRGB_R_input.HasHover = "Yes";
     fixtureRGB_R_input.Text = "FixtureRGB_R";
@@ -249,6 +250,7 @@ function main(displayHandle)
         bottom = 1
     }
     fixtureRGB_G_input.Padding = "5,5"
+    fixtureRGB_G_input.Filter = "0123456789"
     fixtureRGB_G_input.Textshadow = 1;
     fixtureRGB_G_input.HasHover = "Yes";
     fixtureRGB_G_input.Text = "FixtureRGB_G";
@@ -294,6 +296,7 @@ function main(displayHandle)
         bottom = 2
     }
     fixtureRGB_B_input.Padding = "5,5"
+    fixtureRGB_B_input.Filter = "0123456789"
     fixtureRGB_B_input.Textshadow = 1;
     fixtureRGB_B_input.HasHover = "Yes";
     fixtureRGB_B_input.Text = "FixtureRGB_B";
@@ -339,6 +342,7 @@ function main(displayHandle)
         bottom = 3
     }
     startingFixtureID_input.Padding = "5,5"
+    startingFixtureID_input.Filter = "0123456789"
     startingFixtureID_input.Textshadow = 1;
     startingFixtureID_input.HasHover = "Yes";
     startingFixtureID_input.Text = "FixtureStartingID";
@@ -420,6 +424,7 @@ function main(displayHandle)
         bottom = 0
     }
     enterChangesButton.Text = "Enter Changes";
+    enterChangesButton.Clicked = "EnterButtonClicked"
     enterChangesButton.Font = "Medium20";
     enterChangesButton.TextAlignmentH = "Centre";
 
@@ -453,6 +458,11 @@ function main(displayHandle)
     signalTable.LowFaderOutputLevelChanged = function(caller)
         Echo(caller.Text .. " changed: " .. caller.Value)
         Cmd("Fixture 302 at " .. caller.Value)
+    end
+
+    signalTable.EnterButtonClicked = function(caller)
+        Obj.Delete(screenOverlay, Obj.Index(baseInput))
+        Echo("Enter button clicked")
     end
 
 end
