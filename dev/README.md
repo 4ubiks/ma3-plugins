@@ -1,5 +1,8 @@
 # Work in Process Plugins
 
+# TODO:
+- [ ] write macro to auto export finished plugins to my drive
+
 # Unfinished Plugins
 ## patchOrganize.lua (WIP):
 Plugin will take all objects in the patch, if they are not grouped, create groups for each, and put them into respective groups, while keeping the addresses and universes intact. It's an organizational tool for LDs with a crowded patch

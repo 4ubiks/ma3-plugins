@@ -1,6 +1,8 @@
 -- Testing the creation of a Popup that integrates faders. 
 -- This is for the `letters/` plugin, but it's not a finished product. 
--- Creating it here, s.t. I don't disrupt the working product. However, this belongs to the letters/ plugin. 
+-- Creating it here, s.t. I don't disrupt the working product. However, this belongs to the letters/ plugin.
+
+-- author: jack harris
 
 local pluginName = select(1, ...)
 local componentName = select(2, ...)
@@ -22,8 +24,8 @@ function main(displayHandle)
     screenOverlay:ClearUIChildren()  
 
     -- dialog base
-    local dialogHeight = 700
-    local dialogWidth = 800
+    local dialogHeight = 1000
+    local dialogWidth = 1200
     local baseInput = screenOverlay:Append("BaseInput")
     baseInput.Name = "Lettering"
     baseInput.H = dialogHeight
@@ -149,7 +151,7 @@ function main(displayHandle)
     -- input grid
     -- 3rd row of dialog
     local inputsGrid = dlgFrame:Append("UILayoutGrid")
-    inputsGrid.Columns=20
+    inputsGrid.Columns=12
     inputsGrid.Rows = 5
     inputsGrid.Anchors = {
         left=0,
@@ -390,6 +392,48 @@ function main(displayHandle)
     fixtureString_input.PluginComponent = myHandle
     fixtureString_input.Clicked = "StringClickedIdk"
     fixtureString_input.Visible = "Yes"
+
+    -- ==============
+    -- buttons 'Confirm' and 'Cancel'
+    local buttonGrid = dlgFrame:Append("UILayoutGrid")
+    buttonGrid.Columns = 2
+    buttonGrid.Rows = 1
+    buttonGrid.Anchors = {
+        left = 0,
+        right = 0,
+        top = 4,
+        bottom = 4
+    }
+    buttonGrid.Margin = {
+        left = 0,
+        right = 0,
+        top = 6,
+        bottom = 6
+    }
+
+    -- 'Confirm'
+    local enterChangesButton = buttonGrid:Append("Button")
+    enterChangesButton.Anchors = {
+        left = 0,
+        right = 0,
+        top = 0,
+        bottom = 0
+    }
+    enterChangesButton.Text = "Enter Changes";
+    enterChangesButton.Font = "Medium20";
+    enterChangesButton.TextAlignmentH = "Centre";
+
+    -- 'Cancel'
+    local cancelButton = buttonGrid:Append("Button")
+    cancelButton.Anchors = {
+        left = 1,
+        right = 1,
+        top = 0,
+        bottom = 0
+    }
+    cancelButton.Text = "Cancel";
+    cancelButton.Font = "Medium20";
+    cancelButton.TextAlignmentH = "Centre"
 
     local resizer = baseInput:Append("ResizeCorner")
     resizer.Anchors = "0,1" 
