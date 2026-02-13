@@ -1,6 +1,4 @@
--- this plugin will display a letter on a Ayrton MagicPanel fixture! Only works on that one, currently. 
--- Can display any english letter `A - Z, uppercase only` on a fixture! A quick way to get letters :)
--- uses two files: 'letters.lua', and 'alphabet.lua'
+-- Can display any english letter `A - Z, uppercase only` on a fixture! A quick way to get letters 
 
 -- This file holds main
 
