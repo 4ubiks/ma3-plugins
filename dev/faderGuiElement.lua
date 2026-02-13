@@ -123,7 +123,7 @@ function main(displayHandle)
         top = 0,
         bottom = 0
     }
-    highIntensityFader.Changed = "OnOutputLevelChanged"
+    highIntensityFader.Changed = "HighFaderOutputLevelChanged"
     highIntensityFader.PluginComponent = myHandle
     highIntensityFader.Text = "High Intensity"
 
@@ -134,7 +134,7 @@ function main(displayHandle)
         top = 0,
         bottom = 0
     }
-    lowIntensityFader.Changed = "OnOutputLevelChanged"
+    lowIntensityFader.Changed = "LowFaderOutputLevelChanged"
     lowIntensityFader.PluginComponent = myHandle
     lowIntensityFader.Text = "Low Intensity"
 
@@ -445,8 +445,14 @@ function main(displayHandle)
         Obj.Delete(screenOverlay, Obj.index(baseInput))
     end
 
-    signalTable.OnOutputLevelChanged = function(caller)
+    signalTable.HighFaderOutputLevelChanged = function(caller)
         Echo(caller.Text .. " changed: " .. caller.Value)
+        Cmd("Fixture 301 at " .. caller.Value)
+    end
+
+    signalTable.LowFaderOutputLevelChanged = function(caller)
+        Echo(caller.Text .. " changed: " .. caller.Value)
+        Cmd("Fixture 302 at " .. caller.Value)
     end
 
 end
