@@ -439,6 +439,8 @@ function main(displayHandle)
     cancelButton.Text = "Cancel";
     cancelButton.Font = "Medium20";
     cancelButton.TextAlignmentH = "Centre"
+    -- END OF GUI ICONS
+    -- ========================================================
 
     local resizer = baseInput:Append("ResizeCorner")
     resizer.Anchors = "0,1" 
@@ -453,6 +455,8 @@ function main(displayHandle)
     signalTable.HighFaderOutputLevelChanged = function(caller)
         Echo(caller.Text .. " changed: " .. caller.Value)
         Cmd("Fixture 301 at " .. caller.Value)
+        lightUp()
+        Echo("uh,,.,")
     end
 
     signalTable.LowFaderOutputLevelChanged = function(caller)
