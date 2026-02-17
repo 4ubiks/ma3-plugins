@@ -6,7 +6,7 @@ function light(letter, fixture)
 	Printf("Fixture ID: " .. FID)
 	atFull = atFull .. FID .. " at Full"	
 
-    -- creating array to use as global, this is what gets used in main
+    -- creating table to use as global, this is what gets used in main
 	lightLetter = {}
 	local choice = _G[letter] -- global table reference '_G'
 
