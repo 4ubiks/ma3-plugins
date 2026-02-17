@@ -447,6 +447,8 @@ function main(displayHandle)
     resizer.AlignmentH = "Right"
     resizer.AlignmentV = "Bottom"  
 
+    testAlphabet()
+
     signalTable.ChauvetButtonClicked = function(caller)
         Echo(caller.Text .. " selected.")
         Obj.Delete(screenOverlay, Obj.index(baseInput))
@@ -455,13 +457,13 @@ function main(displayHandle)
     signalTable.HighFaderOutputLevelChanged = function(caller)
         Echo(caller.Text .. " changed: " .. caller.Value)
         Cmd("Fixture 301 at " .. caller.Value)
-        lightUp()
+        lightUpHigh(caller.Value)
         Echo("uh,,.,")
     end
 
     signalTable.LowFaderOutputLevelChanged = function(caller)
         Echo(caller.Text .. " changed: " .. caller.Value)
-        Cmd("Fixture 302 at " .. caller.Value)
+        lightUpLow(caller.Value)
     end
 
     signalTable.EnterButtonClicked = function(caller)
