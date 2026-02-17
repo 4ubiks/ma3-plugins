@@ -211,7 +211,7 @@ function main(displayHandle)
     fixtureRGB_R_input.Font = "Medium20";
     fixtureRGB_R_input.TextalignmentH = "Centre";
     fixtureRGB_R_input.PluginComponent = myHandle
-    fixtureRGB_R_input.Clicked = "FixtureRGB_RClicked"
+    fixtureRGB_R_input.TextChanged = "FixtureRGB_REntered"
     fixtureRGB_R_input.Visible = "Yes"
 
 
@@ -257,7 +257,7 @@ function main(displayHandle)
     fixtureRGB_G_input.Font = "Medium20";
     fixtureRGB_G_input.TextalignmentH = "Centre";
     fixtureRGB_G_input.PluginComponent = myHandle
-    fixtureRGB_G_input.Clicked = "FixtureRGB_RClicked"
+    fixtureRGB_G_input.TextChanged = "FixtureRGB_GEntered"
     fixtureRGB_G_input.Visible = "Yes"
 
 
@@ -303,7 +303,7 @@ function main(displayHandle)
     fixtureRGB_B_input.Font = "Medium20";
     fixtureRGB_B_input.TextalignmentH = "Centre";
     fixtureRGB_B_input.PluginComponent = myHandle
-    fixtureRGB_B_input.Clicked = "FixtureRGB_BClicked"
+    fixtureRGB_B_input.TextChanged = "FixtureRGB_BEntered"
     fixtureRGB_B_input.Visible = "Yes"
 
 
@@ -464,6 +464,31 @@ function main(displayHandle)
     signalTable.LowFaderOutputLevelChanged = function(caller)
         Echo(caller.Text .. " changed: " .. caller.Value)
         lightUpLow(caller.Value)
+    end
+
+    signalTable.FixtureRGB_REntered = function(caller)
+        Echo("The value uhhhh is uh " .. caller.Content)
+        Cmd("Fixture 301")
+        if (tonumber(caller.Content) < 101) then
+            Cmd("Attribute ColorRGB_R at " .. caller.Content)
+        end
+        Cmd("Clear")
+    end
+
+    signalTable.FixtureRGB_GEntered = function(caller)
+        Cmd("Fixture 301")
+        if (tonumber(caller.Content) < 101) then
+            Cmd("Attribute ColorRGB_G at " .. caller.Content)
+        end
+        Cmd("Clear")
+    end
+
+    signalTable.FixtureRGB_BEntered = function(caller)
+        Cmd("Fixture 301")
+        if (tonumber(caller.Content) < 101) then
+            Cmd("Attribute ColorRGB_B at " .. caller.Content)
+        end
+        Cmd("Clear")
     end
 
     signalTable.EnterButtonClicked = function(caller)
