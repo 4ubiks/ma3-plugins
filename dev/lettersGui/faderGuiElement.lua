@@ -469,24 +469,30 @@ function main(displayHandle)
     signalTable.FixtureRGB_REntered = function(caller)
         Echo("The value uhhhh is uh " .. caller.Content)
         Cmd("Fixture 301")
-        if (tonumber(caller.Content) < 101) then
-            Cmd("Attribute ColorRGB_R at " .. caller.Content)
+        if (caller.Content ~= "") then
+            if ((tonumber(caller.Content) < 101 and tonumber(caller.Content) >= 0)) then
+                Cmd("Attribute ColorRGB_R at " .. caller.Content)
+            end
         end
         Cmd("Clear")
     end
 
     signalTable.FixtureRGB_GEntered = function(caller)
         Cmd("Fixture 301")
-        if (tonumber(caller.Content) < 101) then
-            Cmd("Attribute ColorRGB_G at " .. caller.Content)
+        if (caller.Content ~= "") then
+            if ((tonumber(caller.Content) < 101 and tonumber(caller.Content) >= 0)) then
+                Cmd("Attribute ColorRGB_G at " .. caller.Content)
+            end
         end
         Cmd("Clear")
     end
 
     signalTable.FixtureRGB_BEntered = function(caller)
         Cmd("Fixture 301")
-        if (tonumber(caller.Content) < 101) then
-            Cmd("Attribute ColorRGB_B at " .. caller.Content)
+        if (caller.Content ~= "") then
+            if (tonumber(caller.Content) < 101) then
+                Cmd("Attribute ColorRGB_B at " .. caller.Content)
+            end
         end
         Cmd("Clear")
     end
