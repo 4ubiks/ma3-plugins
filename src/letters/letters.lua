@@ -8,6 +8,8 @@ local function main()
 	-- calls the respective alphabet function for the selected fixture
 	if (selectedFixture == 1) then
 		mkAlphabet() 	
+	else if (selectedFixture == 2) then
+		beyeAlphabet()
 	else
 		magicpanelAlphabet()
 	end
