@@ -23,6 +23,9 @@ none
 `lightLetter`: value array built from input, fed into main
 `choice`: matches input to the arrays in `alphabet.lua`
 
+## In Dev: `v1.2.3.0`
+Adding support for ClayPaky B-Eye K20 fixtures
+
 ## Next bug:
 Switching between fixture types produces garbage on fixtures. After one run of plugin and seeing trash output, it'll work. But it takes one round of looking weird until it works.
 
