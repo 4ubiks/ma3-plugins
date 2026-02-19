@@ -11,7 +11,7 @@ The sequel and newly-revised version of `singleUniverse.lua`. This plugin allows
 This is a directory housing a plugin that takes a user's input string and displays the text on multi-instance fixtures with a 6x6 color grid. 
 Currently supports `Ayrton MagicPanel 6x6` fixtures and `Chauvet MK3 Wash` fixtures. 
 
-## saveAll.lua (v1.2.0.0)
+## saveAll.lua (v1.2.2.0)
 Allows you to save your showfile to all currently connected drives. Will only list existing drives (ex. with no flash drives plugged in, your only option is `Internal`. With two flash drives, you'll see three options (internal, and your two drives). With three flash drives, you'll see four options (internal, and your three drives). You can select which areas to save to, and don't have to save to every drive if you want. It also re-selects Drive 1 (internal) at the very end, so you don't accidentally save things elsewhere. 
 <br>
 <br>
