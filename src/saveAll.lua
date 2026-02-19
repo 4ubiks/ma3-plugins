@@ -49,18 +49,26 @@ local function main()
 		if (tostring(v) == 'true') then
 			if (k == 'Internal') then
 				Cmd('Select Drive 1')
-				Cmd('SaveShow '..showName)
+				Cmd('SaveShow "' ..showName .. '"')
 			else
 				--Printf(k)
 				Cmd('Select Drive '..k)
-				Cmd('SaveShow '..showName)
+				Cmd('SaveShow "' ..showName .. '"')
 			end
 		end
 	end
 	
 	-- Return to internal drive
 	Cmd('Select Drive 1')
-	
+
+	local successBox=
+		MessageBox(
+		{
+			title= "Success!",
+			message="Show successfully saved to X drives."
+		}
+	)	
+		
 end
 
 return main 
