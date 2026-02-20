@@ -1,7 +1,7 @@
 # Work in Process Plugins
 
 # TODO:
-- [ ] write macro to auto export finished plugins to my drive
+- [x] write macro to auto export finished plugins to my drive
 
 # Unfinished Plugins
 ## patchOrganize.lua (WIP):
