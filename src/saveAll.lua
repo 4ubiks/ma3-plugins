@@ -10,13 +10,12 @@ local function main()
 			
 		elseif (myObjects[i].drivetype == 'Removeable') then
 			table.insert(states, {name=myObjects[i].name, state=true, group=i})
-			--Printf('Drive '..myObjects[i].no..' ('..myObjects[i].name..') = '..myObjects[i].drivetype)
 		end
 	end
 	
 	local inputs = {
 	{name = "File Name: ", value=showName .. ".show"}
-}
+	}	
 	
 	-- message box
 	local resultTable=
@@ -29,7 +28,6 @@ local function main()
 			commands = {{value = 1, name="Save to Selected Drives"}, {value=0, name="Quit Without Saving"}},
 			states=states,
 			inputs=inputs,
-			--selectors=selectors,
 			backColor= "Global.Default",
 			icon="logo_small",
 			messageTextColor= "Global.Text",
@@ -51,7 +49,6 @@ local function main()
 				Cmd('Select Drive 1')
 				Cmd('SaveShow "' ..showName .. '"')
 			else
-				--Printf(k)
 				Cmd('Select Drive '..k)
 				Cmd('SaveShow "' ..showName .. '"')
 			end
