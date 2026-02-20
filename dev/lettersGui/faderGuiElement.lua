@@ -458,7 +458,6 @@ function main(displayHandle)
         Echo(caller.Text .. " changed: " .. caller.Value)
         Cmd("Fixture 301 at " .. caller.Value)
         lightUpHigh(caller.Value)
-        Echo("uh,,.,")
     end
 
     signalTable.LowFaderOutputLevelChanged = function(caller)
@@ -467,7 +466,6 @@ function main(displayHandle)
     end
 
     signalTable.FixtureRGB_REntered = function(caller)
-        Echo("The value uhhhh is uh " .. caller.Content)
         Cmd("Fixture 301")
         if (caller.Content ~= "") then
             if ((tonumber(caller.Content) < 101 and tonumber(caller.Content) >= 0)) then

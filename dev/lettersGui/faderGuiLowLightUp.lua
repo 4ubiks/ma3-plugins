@@ -11,7 +11,6 @@ function lightUpLow(lowDimmerValue)
             Cmd("Fixture 301." .. fixtureID .. " at " .. lowDimmerValue)
         end
     end
-    Echo("hi from lightup")
 end
 
 return lightUp
