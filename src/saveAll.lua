@@ -42,15 +42,19 @@ local function main()
 		end
 	end
 	
+	local numOfDrives = 0
+
 	--only save checked drives 
 	for k,v in pairs(resultTable.states) do
 		if (tostring(v) == 'true') then
 			if (k == 'Internal') then
 				Cmd('Select Drive 1')
 				Cmd('SaveShow "' ..showName .. '"')
+				numOfDrives = numOfDrives + 1
 			else
 				Cmd('Select Drive '..k)
 				Cmd('SaveShow "' ..showName .. '"')
+				numOfDrives = numOfDrives + 1
 			end
 		end
 	end
@@ -62,7 +66,7 @@ local function main()
 		MessageBox(
 		{
 			title= "Success!",
-			message="Show successfully saved to X drives."
+			message="Show successfully saved to " .. numOfDrives .. " drives."
 		}
 	)	
 		
