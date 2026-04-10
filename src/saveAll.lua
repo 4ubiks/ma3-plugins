@@ -25,7 +25,7 @@ local function main()
 			message="Save your show to whatever drives you would like, all at once!",
 			message_align_h = Enums.AlignmentH.Left,
 			message_align_v = Enums.AlignmentV.Top,
-			commands = {{value = 1, name="Save to Selected Drives"}, {value=0, name="Quit Without Saving"}},
+			commands = {{value = 0, name="Save to Selected Drives"}, {value=1, name="Quit Without Saving"}},
 			states=states,
 			inputs=inputs,
 			backColor= "Global.Default",
@@ -37,7 +37,7 @@ local function main()
 	
 	-- determine whether the table was completed or not
 	if resultTable.success then
-		if resultTable.result == 0 then
+		if resultTable.result == 1 then
 			return
 		end
 	end
