@@ -6,6 +6,7 @@ function call()
 	
 	table.insert(states, {name="Chauvet MK3 Wash", state=false, group=1, value=1})
 	table.insert(states, {name="Ayrton MagicPanel", state=false, group=1, value=1})
+	table.insert(states, {name="ClayPaky K20 B-Eye", state=false, group=1, value=1})
 
 	-- each field for user input
 	inputs = {
@@ -40,6 +41,8 @@ function call()
 		if (tostring(v) == 'true') then
 			if (k == 'Chauvet MK3 Wash') then
 				selectedFixture = 1
+			elseif (k == 'ClayPaky K20 B-Eye') then
+				selectedFixture = 2
 			end
 		end
 	end
