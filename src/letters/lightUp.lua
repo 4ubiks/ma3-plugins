@@ -30,6 +30,13 @@ function light(letter, fixture)
 	mkWashValues = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 					0, 0, 0, 0, 0, 0, 0, 0, 0,
 					0, 0, 0}
+
+	beyeValue = {0, 0, 0, 0, 0, 0, 0,
+				0, 0, 0, 0, 0, 0, 0, 
+				0, 0, 0, 0, 0, 0, 0, 
+				0, 0, 0, 0, 0, 0, 0, 
+				0, 0, 0, 0, 0, 0, 0,
+				0, 0, }
 					
 	-- setting each value in 'values' matrix
 	local setVal = 0
