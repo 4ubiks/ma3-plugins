@@ -1,8 +1,36 @@
 -- Experimental script to generate a landing screen *entirely* from the command line. 
--- Whenever the script is run, a completely random UI is generated. I'll try and write my own randomization method.
+-- Whenever the script is run, a completely random UI is generated. 
 -- 
 
 local function main()
+
+    -- Ones that NEED more space ("MinH"="4"):
+    --     - ContentSheet
+    --     - WindowAtFilter
+    --     - PhaserEditor
+    --     - SpecialDialog 
+    --     - 3dViewer
+    --     - AgendaViewer
+    --     - FixtureSheet
+    --     - SelectionGrid
+    --     - TimecodeViewer
+    --     - LayoutViewer
+    --     - CommandLine
+    --     - CommandBarWing
+
+    local common = {"WindowFixtureSheet", "Window3D", "WindowPlaybacks", "WindowCommandLine", "WindowSequenceSheet", "WindowLayoutView", "WindowXkeys", "WindowDmxSheet", "WindowContentSheet", "WindowSelectionView", "WindowPhaserEditor", "WindowSpecialDialog", "WindowMatricks"}
+    
+    local datapools = {"WindowGeneratorBitmapPool", "WindowMacroPool", "WindowTimecodePool", "WindowConfigurationPool", "WindowMatricksPool", "WindowTimerPool", "WindowFilterPool", "WindowPagePool", "WindowWorldPool", "WindowGeneratorRandomPool", "WindowPluginPool", "WindowGroupPool", "WindowQuickeyPool", "WindowLayoutPool", "WindowSequencePool"}
+
+    local presets = {"WindowPresetPool", "WindowPresetPool", "WindowPresetPool", "WindowPresetPool", "WindowPresetPool", "WindowPresetPool", "WindowPresetPool", "WindowPresetPool", "WindowPresetPool", "WindowPresetPool", "WindowPresetPool", "WindowPresetPool"}
+    local presets_num = {0, 1, 2, 3, 4, 5, 6, 7, 8, 20, 21, 22, 23, 24, 4294967295}
+
+    local pools = {"WindowAppearancePool", "WindowUniversePool", "WindowGoboPool", "WindowCameraPool", "WindowDataPool", "WindowUserPool", "WindowImagePool", "WindowEncoderBarPool", "WindowGelPool", "WindowMeshPool", "WindowRenderQualityPool", "WindowScribblePool", "WindowSoundPool", "WindowViewPool", "WindowTagPool", "WindowSymbolPool", "WindowTimecodesSlotPool", "WindowVideoPool"}
+
+    local tools = {"WindowContentSheet", "WindowAtFilter", "Window3D", "WindowRDM", "WindowDmxSheet", "WindowRecipeEditor", "WindowAgenda", "WindowSound", "WindowFixtureSheet", "WindowSelectionView", "WindowClock", "WindowTimecode", "WindowSequenceSheet", "WindowSmartView", "WindowLayoutView", "WindowSpecialDialog", "WindowMatricks", "WindowPhaserEditor"}
+
+    local more = {"WindowAlignbar", "WindowCustomMasterSelection", "WindowCommandLine", "WindowTrackpad", "WindowCommandWingBar", "WindowRunningPlaybacks", "WindowHelpViewer", "WindowEncoderBar", "WindowPlaybacks", "WindowInfo", "WindowSelectionBar", "WindowXkeys", "WindowMessageCenter", "WindowStepBar", "WindowSystemInfo", "WindowSystemMonitor"}
+
     Cmd("Delete ScreenContent Default") 
 
     -- generate LEFT SIDE
