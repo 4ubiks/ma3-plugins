@@ -36,7 +36,17 @@ local function main()
     local offsetMultiplier = GetAttributeCount()
     local offsetConstant = GetDebugFPS()
 
+    local x_config = 0
+    local y_config = 0 
+
+    local width_config = 32
+    local height_config = 8
+
     for i=0, 10 do
+        if i==5 then
+            y_config = 0
+            x_config = 32
+        end
         local pickerBase=2
 
         pickerBase = pickerBase * offsetMultiplier
@@ -49,23 +59,25 @@ local function main()
 
         if roundedMenuCat == 1 then
             Printf("common, size " .. #common)
-            objectGenerator(common, 0)
+            objectGenerator(common, 0, x_config, y_config, width_config, height_config, i)
         elseif roundedMenuCat == 2 then
             Printf("datapools, size " .. #datapools)
-            objectGenerator(datapools, 0)
+            objectGenerator(datapools, 0, x_config, y_config, width_config, height_config, i)
         elseif roundedMenuCat == 3 then
             Printf("presets, size " .. #presets)
-            objectGenerator(presets_num, 1)
+            objectGenerator(presets_num, 1, x_config, y_config, width_config, height_config, i)
         elseif roundedMenuCat == 4 then
             Printf("pools, size " .. #pools)
-            objectGenerator(pools, 0)
+            objectGenerator(pools, 0, x_config, y_config, width_config, height_config, i)
         elseif roundedMenuCat == 5 then
             Printf("tools, size " .. #tools)
-            objectGenerator(tools, 0)
+            objectGenerator(tools, 0, x_config, y_config, width_config, height_config, i)
         elseif roundedMenuCat == 6 then 
             Printf("more, size " .. #more)
-            objectGenerator(more, 0)
+            objectGenerator(more, 0, x_config, y_config, width_config, height_config, i)
         end
+
+        y_config = y_config + 8
         
     end
     
