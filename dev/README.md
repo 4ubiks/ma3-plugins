@@ -1,5 +1,9 @@
 # Work in Process Plugins
 
+## ui_generator/
+Generates a random assortment of MA3 menu items. This serves no functionality. It's just for fun. Maybe you can challenge yourself to do a show after running the plugin once. 
+
+
 # TODO:
 - [x] write macro to auto export finished plugins to my drive
 
