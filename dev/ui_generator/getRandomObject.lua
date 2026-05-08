@@ -1,6 +1,6 @@
 -- used in the UI generation, gets a random object based on a chosen set of menu items
 
-    function objectGenerator(menuList, preset, x_pos, y_pos, width, height, itemNumber)
+function objectGenerator(menuList, preset, x_pos, y_pos, width, height, itemNumber)
     local menuItemGeneratorMultiplier = GetSubfixtureCount() + 1 -- ensuring it's never 0
     local menuItemGeneratorConstant = GetDebugFPS()
 
