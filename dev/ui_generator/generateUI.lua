@@ -4,6 +4,8 @@
 
 local function main()
 
+    Cmd("Delete ScreenContent Default") 
+
     -- Ones that NEED more space ("MinH"="4"):
     --     - ContentSheet
     --     - WindowAtFilter
@@ -31,28 +33,41 @@ local function main()
 
     local more = {"WindowAlignbar", "WindowCustomMasterSelection", "WindowCommandLine", "WindowTrackpad", "WindowCommandWingBar", "WindowRunningPlaybacks", "WindowHelpViewer", "WindowEncoderBar", "WindowPlaybacks", "WindowInfo", "WindowSelectionBar", "WindowXkeys", "WindowMessageCenter", "WindowStepBar", "WindowSystemInfo", "WindowSystemMonitor"}
 
-    Cmd("Delete ScreenContent Default") 
+    local offsetMultiplier = GetAttributeCount()
+    local offsetConstant = GetDebugFPS()
 
-    -- generate LEFT SIDE
-    -- Camera selection
-    Cmd("Store ScreenContent Default 'WindowCameraPool' 'MinW'='4' 'MinH'='2' 'SnapToBlockSize'='Yes' /NoConfirmation")
-    Cmd("Set ScreenContent Default.1 'X'='0' 'Y'='0' 'W'='16' 'H'='2'")
+    for i=0, 10 do
+        local pickerBase=2
 
-    -- 3D Window
-    Cmd("Store ScreenContent Default 'Window3D' 'MinW'='4' 'MinH'='2' /NoConfirmation")
-    Cmd("Set ScreenContent Default.2 'X'='0' 'Y'='2' 'W'='34' 'H'='16'")
+        pickerBase = pickerBase * offsetMultiplier
+        pickerBase = pickerBase + offsetConstant
 
-    -- SysMon
-    Cmd("Store ScreenContent Default 'WindowSystemMonitor' 'MinW'='4' 'MinH'='4' /NoConfirmation")
-    Cmd("Set ScreenContent Default.3 'X'='0' 'Y'='18' 'W'='34' 'H'='6'")
+        offsetMultiplier = pickerBase
 
-    -- Matricks pool
-    Cmd("Store ScreenContent Default 'WindowMatricksPool' 'MinW'='2' 'MinH'='2' /NoConfirmation")
-    Cmd("Set ScreenContent Default.4 'X'='0' 'Y'='26' 'W'='34' 'H'='4'")
+        local menuCat = (pickerBase%6) + 1
+        local roundedMenuCat = menuCat - (menuCat % 1)
 
-    -- XKeys
-    Cmd("Store ScreenContent Default 'WindowXkeys' 'MinW'='4' 'MinH'='4' /NoConfirmation")
-    Cmd("Set ScreenContent Default.5 'X'='0' 'Y'='30' 'W'='34' 'H'='6'")
+        if roundedMenuCat == 1 then
+            Printf("common, size " .. #common)
+            objectGenerator(common, 0)
+        elseif roundedMenuCat == 2 then
+            Printf("datapools, size " .. #datapools)
+            objectGenerator(datapools, 0)
+        elseif roundedMenuCat == 3 then
+            Printf("presets, size " .. #presets)
+            objectGenerator(presets_num, 1)
+        elseif roundedMenuCat == 4 then
+            Printf("pools, size " .. #pools)
+            objectGenerator(pools, 0)
+        elseif roundedMenuCat == 5 then
+            Printf("tools, size " .. #tools)
+            objectGenerator(tools, 0)
+        elseif roundedMenuCat == 6 then 
+            Printf("more, size " .. #more)
+            objectGenerator(more, 0)
+        end
+        
+    end
     
 end
 
