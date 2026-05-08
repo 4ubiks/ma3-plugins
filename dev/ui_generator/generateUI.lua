@@ -42,11 +42,18 @@ local function main()
     local width_config = 32
     local height_config = 8
 
-    for i=0, 10 do
+    for i=0, 9 do
+
         if i==5 then
             y_config = 0
             x_config = 32
+            height_config = 8
         end
+
+        if y_config > 28 then
+            height_config = 4
+        end
+
         local pickerBase=2
 
         pickerBase = pickerBase * offsetMultiplier
