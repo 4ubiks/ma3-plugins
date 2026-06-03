@@ -1,5 +1,5 @@
 # ma3-plugins
-These are ma3 plugins built in Lua, using Lua syntax and built-in grandMA3 functions to help optimize console efficiency
+These are ma3 plugins built in Lua, using Lua syntax and built-in grandMA3 functions to help optimize console efficiency. all open source, feel free to use them however you want!
 
 # src/
 ## universeTrace.lua (v1.1.0.0)
