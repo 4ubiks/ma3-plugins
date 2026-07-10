@@ -16,6 +16,11 @@ Allows you to save your showfile to all currently connected drives. Will only li
 <br>
 <br>
 
+## ui_generator/ (v1.0.0.0)
+When run, generates a random user interface. This serves zero practical purpose. I wanted to explore quick pseudorandom methods and I thought this would be a funny way to do it. Just run the plugin and it'll create a random UI. I have only tested this inside onPC, I don't know what it would do / if it would work on a console. 
+<br>
+<br>
+
 ## patchInfo.lua (v1.0.0.0)
 Generates a report of every fixture in your patch, including each fixture's manufacturer, model, and patch mode. This will all be printed to an external .txt document. You'll have to adjust the file path to meet the specifications of your system and what works best for you. Include this on line 3, rewriting `"report.txt"` as `"/path/to/the/file/report.txt"`. The only indication of this plugin being run is a return in your command line history and system monitor, indicating that the respective plugin has run. Efficient tool for generating a quick, concise summary of your showfile's patch. 
 <br>
